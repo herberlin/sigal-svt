@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  sigal:
+    container_name: sigal
+    build:
+      context: docker
+      dockerfile: "Dockerfile"
+    restart: on-failure
+    ports:
+      - "8000:8000" 
+    volumes:
+      - ./sigal:/home/sigal
+    working_dir: /home/sigal
+    command: bash -c "sigal build &&  sigal serve"
