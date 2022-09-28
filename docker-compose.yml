@@ -5,6 +5,7 @@ services:
     build:
       context: docker
       dockerfile: "Dockerfile"
+    restart: 'no'
     ports:
       - "8000:8000" 
     volumes:
